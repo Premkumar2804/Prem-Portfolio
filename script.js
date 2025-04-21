@@ -60,14 +60,38 @@ window.onscroll = () => {
   });
 
   /*=================== scrll reveal=======================*/
+  window.onload = function () {
+    const storedFeedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+    storedFeedbacks.forEach(addFeedbackCard);
+  };
+
   document.getElementById("reviewForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name        = document.getElementById("name").value;
+    const name = document.getElementById("name").value;
     const designation = document.getElementById("designation").value;
-    const comments    = document.getElementById("comments").value;
-    const rating      = document.getElementById("rating").value;
+    const comments = document.getElementById("comments").value;
+    const rating = document.getElementById("rating").value;
 
+    const feedback = { name, designation, comments, rating };
+
+    // Save to localStorage
+    const feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+    feedbacks.push(feedback);
+    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+    addFeedbackCard(feedback);
+
+    document.getElementById("thankYouMessage").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("thankYouMessage").style.display = "none";
+    }, 3000);
+
+    this.reset();
+    document.querySelector(".feedback-display").scrollIntoView({ behavior: "smooth" });
+  });
+
+  function addFeedbackCard({ name, designation, comments, rating }) {
     const feedbackCard = document.createElement("div");
     feedbackCard.classList.add("feedback-card");
     feedbackCard.innerHTML = `
@@ -79,17 +103,5 @@ window.onscroll = () => {
       <p>"${comments}"</p>
       <div class="stars">${rating}</div>
     `;
-
     document.getElementById("feedbackList").appendChild(feedbackCard);
-
-    // Show thank-you message
-    const thankYou = document.getElementById("thankYouMessage");
-    thankYou.style.display = "block";
-    setTimeout(() => thankYou.style.display = "none", 3000);
-
-    // Reset form
-    this.reset();
-
-    // Scroll to feedback display
-    document.querySelector(".feedback-display").scrollIntoView({ behavior: "smooth" });
-  });
+  }

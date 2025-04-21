@@ -262,7 +262,7 @@
 <!--Contact design-->
 <section class="contact" id="contact">
     <class class="heading">Contact<span>Me
-        <form action="#">
+        <form  id="contactForm" action="#">
             <div class="input-box">
                 <input type="text" placeholder="Your Full Name">
                 <input type="email" placeholder="Enter your Email Address">
@@ -274,10 +274,48 @@
             </div>
             <textarea name="" id="" cols="40" rows="10" placeholder="Decription....,"></textarea>
             <input type="submit" value="Send Message" class="btn">
-
         </form>
+    </section>
+   <!-- Feedback Section -->
+   <section class="feedback-section">
+    <!-- Feedback Display -->
+    <div class="feedback-display">
+      <h2>FEEDBACKS of Our Testimonials</h2>
+      <div id="feedbackList" class="scroll-container">
+        <!-- Client feedback cards will appear here -->
+      </div>
+    </div>
+  
+  <!-- Feedback Form -->
+  <div class="feedback-form">
+    <h2>Submit Your Feedbacks</h2>
+    <form id="reviewForm">
+      <input type="text" id="name" placeholder="Enter Your Name" required />
+      <input type="text" id="designation" placeholder="Your Place" required />
+      <label for="rating">Rating:</label>
+      <select id="rating" required>
+        <option value="" disabled selected>Select Rating</option>
+        <option value="⭐">⭐ - Poor</option>
+        <option value="⭐⭐">⭐⭐ - Fair</option>
+        <option value="⭐⭐⭐">⭐⭐⭐ - Good</option>
+        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ - Very Good</option>
+        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ - Excellent</option>
+      </select>
+      <textarea id="comments" placeholder="Your Feedback" required></textarea>
+      
+     
+  
+      <button type="submit">Submit</button>
+    </form>
+  
+    <p id="thankYouMessage" style="display: none; color: #59B2F4; font-weight: bold; text-align: center;">
+      Thanks for your valuable feedback!
+    </p>
+  </div>
+  
+ </section>
 
-</section>
+<!--Footer design-->
 <!--Footer design-->
 <footer class="footer">
     <div class="footer-text">
@@ -286,6 +324,8 @@
     <div class="footer-iconTop">
         <a href="#home"><i class="fa-solid fa-angles-up"></i></a>
     </div>
+
+</footer>
 
 </footer>
 

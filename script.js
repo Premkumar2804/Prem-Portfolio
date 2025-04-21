@@ -46,7 +46,7 @@ window.onscroll = () => {
      });
 
      ScrollReveal().reveal('.home-content , heading', { origin: 'top' });
-     ScrollReveal().reveal('.home-img, .technical-skills, .project-cointainer, .certificate-container, .contact form', { origin: 'button' });
+     ScrollReveal().reveal('.home-img, .technical-skills, .project-cointainer, .certificate-container, .contact form,  .feedback-form, .feedback-display', { origin: 'button' });
      ScrollReveal().reveal('.home-contact h1, .about-img , .certificate-box', { origin: 'left' });
      ScrollReveal().reveal('.home-contact p, .about-content', { origin: 'left' });
      
@@ -59,4 +59,37 @@ window.onscroll = () => {
     loop: true,
   });
 
-  
+  /*=================== scrll reveal=======================*/
+  document.getElementById("reviewForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name        = document.getElementById("name").value;
+    const designation = document.getElementById("designation").value;
+    const comments    = document.getElementById("comments").value;
+    const rating      = document.getElementById("rating").value;
+
+    const feedbackCard = document.createElement("div");
+    feedbackCard.classList.add("feedback-card");
+    feedbackCard.innerHTML = `
+      <div class="avatar">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" width="60" alt="Avatar">
+      </div>
+      <div class="client-info"><strong>${name}</strong></div>
+      <div class="client-info">${designation}</div>
+      <p>"${comments}"</p>
+      <div class="stars">${rating}</div>
+    `;
+
+    document.getElementById("feedbackList").appendChild(feedbackCard);
+
+    // Show thank-you message
+    const thankYou = document.getElementById("thankYouMessage");
+    thankYou.style.display = "block";
+    setTimeout(() => thankYou.style.display = "none", 3000);
+
+    // Reset form
+    this.reset();
+
+    // Scroll to feedback display
+    document.querySelector(".feedback-display").scrollIntoView({ behavior: "smooth" });
+  });

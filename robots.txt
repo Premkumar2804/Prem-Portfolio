@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://premkumar2804.github.io/Prem-Portfolio/sitemap.xml

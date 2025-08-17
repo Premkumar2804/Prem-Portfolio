@@ -105,3 +105,28 @@ window.onscroll = () => {
     `;
     document.getElementById("feedbackList").appendChild(feedbackCard);
   }
+
+  /*Slide windo certificate*/
+  const track  = document.querySelector('.carousel-track');
+const boxes  = Array.from(track.children);
+const prev   = document.querySelector('.prev-btn');
+const next   = document.querySelector('.next-btn');
+let   index  = 0;
+
+function updateCarousel() {
+  const slideWidth = boxes[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+}
+
+next.addEventListener('click', () => {
+  index = (index + 1) % boxes.length;
+  updateCarousel();
+});
+
+prev.addEventListener('click', () => {
+  index = (index - 1 + boxes.length) % boxes.length;
+  updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
+window.addEventListener('load',   updateCarousel);

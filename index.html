@@ -355,34 +355,80 @@
         </form>
   </section>
 
-  <!-- Feedback Display Section -->
-  <div class="feedback-display">
-    <h2>What Our Users Say</h2>
-    <div class="scroll-container" id="feedbackList"></div>
+   <!-- Feedback Display Section -->
+<div class="feedback-display">
+  <h2>What Our Users Say</h2>
+  <div class="scroll-container" id="feedbackList"></div>
+</div>
+
+<!-- Feedback Form Section -->
+<section class="feedback-section">
+  <div class="feedback-form">
+    <h2>Submit Your Feedbacks</h2>
+    <form id="reviewForm">
+      <input type="text" id="name" name="name" placeholder="Enter Your Name" required />
+      <input type="text" id="designation" name="designation" placeholder="Your Place" required />
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="" disabled selected>Select Rating</option>
+        <option value="⭐">⭐ - Poor</option>
+        <option value="⭐⭐">⭐⭐ - Fair</option>
+        <option value="⭐⭐⭐">⭐⭐⭐ - Good</option>
+        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ - Very Good</option>
+        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ - Excellent</option>
+      </select>
+      <textarea id="comments" name="comments" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="thankYouMessage" style="display: none; color: #59B2F4; font-weight: bold; text-align: center;">
+      Thanks for your valuable feedback!
+    </p>
   </div>
-  <!-- Feedback Form Section -->
-  <section class="feedback-section">
-    <div class="feedback-form">
-      <h2>Submit Your Feedbacks</h2>
-      <form id="reviewForm">
-        <input type="text" id="name" placeholder="Enter Your Name" required />
-        <input type="text" id="designation" placeholder="Your Place" required />
-        <label for="rating">Rating:</label>
-        <select id="rating" required>
-          <option value="" disabled selected>Select Rating</option>
-          <option value="⭐">⭐ - Poor</option>
-          <option value="⭐⭐">⭐⭐ - Fair</option>
-          <option value="⭐⭐⭐">⭐⭐⭐ - Good</option>
-          <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ - Very Good</option>
-          <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ - Excellent</option>
-        </select>
-        <textarea id="comments" placeholder="Your Feedback" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <p id="thankYouMessage" style="display: none; color: #59B2F4; font-weight: bold; text-align: center;">
-        Thanks for your valuable feedback!
-      </p>
-    </div>
+</section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+emailjs.init("SWvAWZt3aqsbRONMA");
+
+const form = document.getElementById("reviewForm");
+const feedbackList = document.getElementById("feedbackList");
+const thankYouMessage = document.getElementById("thankYouMessage");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const formData = {
+    name: document.getElementById("name").value,
+    designation: document.getElementById("designation").value,
+    rating: document.getElementById("rating").value,
+    comments: document.getElementById("comments").value
+  };
+
+  emailjs.send("service_vom32kw", "template_qbw2v3p", formData)
+    .then(() => {
+      thankYouMessage.style.display = "block";
+
+      const feedbackItem = document.createElement("div");
+      feedbackItem.classList.add("feedback-item");
+      feedbackItem.innerHTML = `
+        <p><strong>${formData.name}</strong> (${formData.designation})</p>
+        <p>Rating: ${formData.rating}</p>
+        <p>${formData.comments}</p>
+        <hr>
+      `;
+      feedbackList.prepend(feedbackItem);
+
+      form.reset();
+    })
+    .catch(error => {
+      alert("Failed to send feedback ❌ " + error.text);
+    });
+});
+
+</script>
+
 
 
   </section>
@@ -419,3 +465,4 @@
 
 
 </html>
+

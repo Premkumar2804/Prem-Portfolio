@@ -9,6 +9,15 @@
   <title>Prem Portfolio | Web Developer & Designer</title>
     <link rel="icon" href="prem1.png" type="image/x-icon">
   <meta name="description" content="Prem Kumar's portfolio showcasing web development, projects, and achievements. Discover Prem's skills and experience.">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74HXJK1JG4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-74HXJK1JG4');
+</script>
   <!-- ✅ Add JSON-LD Schema Here -->
   <script type="application/ld+json">
   {
@@ -114,7 +123,7 @@
         <a href="https://www.linkedin.com/in/premkumar-hbpa/ "><i class="fa-brands fa-linkedin"></i></a>
 
       </div>
-      <a href="PREM Resume (1).pdf" class="btn">Download Resume</a>
+      <a href="PREM Resume (1).pdf" download onclick="gtag('event','resume_download');" class="btn">Download Resume</a>
     </div>
 
     <div class="home-img">
@@ -253,7 +262,7 @@
       <div class="project-box"><i class="fa-solid fa-code"></i>
         <h2>Web Development</h2>
         <p>Hi, I'm Prem. I have hands-on experience in web development, where I design user-friendly websites.TechLearn LMS is a responsive Learning Management System built with React and Vite, enabling smooth course management, progress tracking, and content delivery for students and instructors.</p>
-        <a href="https://premkumar2804.github.io/LMS/" target="_blank" class="btn">Read more..</a>
+        <a href="https://premkumar2804.github.io/LMS/" onclick="gtag('event','project_open',{project:'ERP System'});" target="_blank" class="btn">Read more..</a>
       </div>
 
       <div class="project-box"><i class="fa-brands fa-android"></i>
@@ -261,7 +270,7 @@
         <p>Hi, I'm Prem. I have intermediate-level experience in Android application development using Java and XML.
           I’ve worked on real-time projects that include video uploading, user authentication, and various interactive
           features, showcasing my ability to build functional and user-friendly mobile apps.</p>
-        <a href="https://github.com/Premkumar2804/Kalluri-Naatkal" class="btn">Read more..</a>
+        <a href="https://github.com/Premkumar2804/Kalluri-Naatkal" onclick="gtag('event','project_open',{project:'ERP System'});"  class="btn">Read more..</a>
       </div>
       <div class="project-box"><i class="fa-solid fa-palette"></i>
         <h2>UI/UX Design</h2>

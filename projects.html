@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Prem Portfolio</title>
+  <link rel="icon" href="prem1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="projects-page">
+  <header class="header">
+    <a href="index.html" class="logo">Portfolio</a>
+    <i class="fa-solid fa-bars" id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#project">Projects</a>
+      <a href="index.html#certificate">Certificate</a>
+      <a href="index.html#contact">Contact us</a>
+    </nav>
+  </header>
+
+  <section class="projects-section">
+    <div class="projects-header">
+      <div class="header-top">
+        <a href="index.html#project" class="back-pill">
+          &larr; Back
+        </a>
+        <h2 class="heading">My <span>Projects Gallery</span></h2>
+      </div>
+
+      <div class="search-container">
+        <input type="text" id="projectSearch" placeholder="Search by name, ID (#01), or technology..."
+          autocomplete="off">
+        <div id="suggestionList" class="suggestion-list"></div>
+      </div>
+
+      <div class="filter-chips">
+        <div class="chip active" data-filter="all">All</div>
+        <div class="chip" data-filter="web">Web Development</div>
+        <div class="chip" data-filter="android">Android</div>
+        <div class="chip" data-filter="uiux">UI/UX</div>
+        <div class="chip" data-filter="react">React</div>
+        <div class="chip" data-filter="socket">Socket.io</div>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Project 1: Real-time Chat -->
+      <div class="project-card" data-id="#01" data-category="web react socket">
+        <span class="project-id">#01</span>
+        <div class="card-img">
+          <img src="chatapp_premium.png" alt="Real-time Chat Application">
+        </div>
+        <div class="card-content">
+          <span class="framework-label">React + Node.js + Socket.io</span>
+          <h3>Real-time Chat Application</h3>
+          <p>A high-performance chatting platform using WebSockets for instant messaging. Features user rooms and
+            real-time updates.</p>
+          <div class="tech-tags">
+            <span class="tag">React</span>
+            <span class="tag">Socket.io</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Vercel</span>
+          </div>
+          <div class="card-btns">
+            <a href="https://hbpa-chat.vercel.app/" target="_blank" class="btn"><i class="fa-solid fa-eye"></i> Live
+              Preview</a>
+            <a href="#" class="btn btn-outline"><i class="fa-solid fa-code"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: TechLearn LMS -->
+      <div class="project-card" data-id="#02" data-category="web react">
+        <span class="project-id">#02</span>
+        <div class="card-img">
+          <img src="lms_premium.png" alt="TechLearn LMS">
+        </div>
+        <div class="card-content">
+          <span class="framework-label">React + Vite + Tailwind</span>
+          <h3>TechLearn LMS</h3>
+          <p>A comprehensive Learning Management System built with React and Vite, featuring course tracking and
+            interactive content delivery.</p>
+          <div class="tech-tags">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+          <div class="card-btns">
+            <a href="https://premkumar2804.github.io/LMS/" target="_blank" class="btn"><i class="fa-solid fa-eye"></i>
+              Live View</a>
+            <a href="#" class="btn btn-outline"><i class="fa-solid fa-code"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Android App -->
+      <div class="project-card" data-id="#03" data-category="android">
+        <span class="project-id">#03</span>
+        <div class="card-img">
+          <img src="kalluri_premium.png" alt="Android App Development">
+        </div>
+        <div class="card-content">
+          <span class="framework-label">Android + Java + XML</span>
+          <h3>Kalluri-Naatkal App</h3>
+          <p>An interactive Android application features video uploading and user authentication, built for seamless
+            campus updates.</p>
+          <div class="tech-tags">
+            <span class="tag">Java</span>
+            <span class="tag">XML</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <div class="card-btns">
+            <a href="#" class="btn"><i class="fa-solid fa-eye"></i> Live Preview</a>
+            <a href="https://github.com/Premkumar2804/Kalluri-Naatkal" target="_blank" class="btn btn-outline"><i
+                class="fa-solid fa-code"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Taskflow AI -->
+      <div class="project-card" data-id="#04" data-category="web uiux">
+        <span class="project-id">#04</span>
+        <div class="card-img">
+          <img src="UI Design.png" alt="Taskflow AI Design">
+        </div>
+        <div class="card-content">
+          <span class="framework-label">UI/UX + Figma</span>
+          <h3>Taskflow-ai Design</h3>
+          <p>UX-focused project featuring wireframes and high-fidelity prototypes for an AI task management system.
+            Designed for maximum usability.</p>
+          <div class="tech-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">User Research</span>
+          </div>
+          <div class="card-btns">
+            <a href="https://premkumar2804.github.io/Taskflow-ai/" target="_blank" class="btn"><i
+                class="fa-solid fa-eye"></i> Live Preview</a>
+            <a href="#" class="btn btn-outline"><i class="fa-solid fa-code"></i> Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5: Personal Portfolio -->
+      <div class="project-card" data-id="#05" data-category="web">
+        <span class="project-id">#05</span>
+        <div class="card-img">
+          <img src="Portfolio .png" alt="Personal Portfolio">
+        </div>
+        <div class="card-content">
+          <span class="framework-label">HTML + CSS + JS</span>
+          <h3>Personal Portfolio</h3>
+          <p>A fully responsive, modern personal portfolio showcasing projects, skills, and contact information with a
+            sleek dark theme and seamless animations.</p>
+          <div class="tech-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="card-btns">
+            <a href="https://premkumar2804.github.io/Prem-Portfolio/" target="_blank" class="btn"><i
+                class="fa-solid fa-eye"></i> Live Preview</a>
+            <a href="https://github.com/Premkumar2804/Prem-Portfolio" target="_blank" class="btn btn-outline"><i
+                class="fa-solid fa-code"></i> Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 6: Upcoming -->
+      <div class="project-card" data-id="#06" data-category="upcoming">
+        <span class="project-id">#06</span>
+        <div class="card-img" style="display: flex; align-items: center; justify-content: center; background: #111;">
+          <i class="fa-solid fa-hourglass-half" style="font-size: 5rem; color: var(--main-color);"></i>
+        </div>
+        <div class="card-content">
+          <span class="framework-label">UPCOMING</span>
+          <h3>E-Commerce Platform</h3>
+          <p>A full-stack e-commerce application featuring product management, a modern shopping cart, and secure
+            checkout integration. Currently in development.</p>
+          <div class="tech-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+          <div class="card-btns">
+            <a href="#" class="btn" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;"><i
+                class="fa-solid fa-lock"></i> Coming Soon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7: Upcoming -->
+      <div class="project-card" data-id="#07" data-category="upcoming">
+        <span class="project-id">#07</span>
+        <div class="card-img" style="display: flex; align-items: center; justify-content: center; background: #111;">
+          <i class="fa-solid fa-rocket" style="font-size: 5rem; color: var(--main-color);"></i>
+        </div>
+        <div class="card-content">
+          <span class="framework-label">UPCOMING</span>
+          <h3>AI Article Summarizer</h3>
+          <p>A modern web app leveraging AI APIs to instantly summarize lengthy articles and PDFs into easy-to-read,
+            concise highlights. Design phase ongoing.</p>
+          <div class="tech-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+          <div class="card-btns">
+            <a href="#" class="btn" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;"><i
+                class="fa-solid fa-lock"></i> Coming Soon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2025 by @premkumar | All rights Reserved. </p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="index.html#home"><i class="fa-solid fa-angles-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
